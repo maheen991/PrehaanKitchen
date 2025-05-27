@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prehaan's Kitchen | Premium Culinary Experience</title>
+    <meta name="description" content="Discover the art of gourmet cooking with Prehaan's Kitchen. Premium recipes, cooking tutorials, and culinary expertise.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+
+    <style>
+        :root {
+            /* Color Scheme */
+            --charcoal: #2C2C2C;
+            --gold: #D4AF37;
+            --cream: #F8F6F0;
+            --burgundy: #800020;
+            --forest-green: #355E3B;
+            --light-gold: #F0E6C2;
+            --dark-charcoal: #1E1E1E;
+            
+            /* Typography */
+            --serif: 'Playfair Display', serif;
+            --sans-serif: 'Poppins', sans-serif;
+            
+            /* Spacing */
+            --section-padding: 8rem 5%;
+            
+            /* Shadows */
+            --text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            --box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            --gold-glow: 0 0 20px rgba(212, 175, 55, 0.6); /* Enhanced glow */
+            --dark-glow: 0 0 25px rgba(0,0,0,0.3);
+            
+            /* Transitions */
+            --transition-slow: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); /* Slightly slower for premium feel */
+            --transition-fast: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother ease */
+            --transition-medium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 62.5%; /* 1rem = 10px */
+        }
+        
+        body {
+            font-family: var(--sans-serif);
+            color: var(--charcoal);
+            background-color: var(--cream);
+            line-height: 1.7; /* Increased for readability */
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--serif);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--dark-charcoal);
+        }
+        
+        h1 {
+            font-size: 6rem; /* Slightly larger */
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+        
+        h2 {
+            font-size: 4.2rem; /* Slightly larger */
+            margin-bottom: 3.5rem; /* Increased spacing */
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -1.2rem; /* Adjusted position */
+            left: 0;
+            width: 70%; /* Slightly longer */
+            height: 4px; /* Thicker */
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s; /* Added delay */
+        }
+
+        h2.animated:after { /* Animate underline when h2 is visible */
+            transform: scaleX(1);
+        }
+        
+        h3 {
+            font-size: 3rem; /* Slightly larger */
+        }
+        
+        p {
+            font-size: 1.7rem; /* Slightly larger for readability */
+            margin-bottom: 2.5rem; /* Increased spacing */
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1.6rem 3.2rem; /* Slightly larger padding */
+            font-size: 1.6rem;
+            font-weight: 600; /* Bolder */
+            text-transform: uppercase;
+            letter-spacing: 1.2px; /* Increased spacing */
+            border: none;
+            border-radius: 3px; /* Subtle rounding */
+            cursor: pointer;
+            transition: var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transform: perspective(1px) translateZ(0); /* Promote to own layer */
+        }
+
+        .btn span { /* For text inside button if needed for effects */
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn:before { /* Background fill effect */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-charcoal);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: -1;
+        }
+        
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--dark-charcoal);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-primary:hover {
+            color: var(--gold);
+            background-color: transparent; /* Base style */
+            box-shadow: var(--gold-glow);
+        }
+        .btn-primary:hover:before {
+            transform: scaleX(1);
+            transform-origin: left;
+            background-color: var(--dark-charcoal); /* This will be overridden by specific button styles */
+        }
+         .btn-primary:hover:before { /* Ensure text color changes on hover */
+            background-color: transparent; /* Let border show */
+        }
+
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--gold);
+            color: var(--dark-charcoal);
+            box-shadow: var(--gold-glow);
+        }
+        .btn-secondary:hover:before {
+            transform: scaleX(1);
+            transform-origin: left;
+            background-color: var(--gold);
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem; /* Increased gap */
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+        
+
+
+.logo-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  background-color: transparent;
+   width: 75px;
+  height: 75px;
+}
+
+
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+.logo-text {
+  box-shadow: none;
+}
+.logo-text:hover {
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+}
+
+
+
+
+
+
+/*tagline*/
+.tagline {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-top: 0.2rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  color: var(--golden-turmeric);
+  font-size: 1.5rem;
+}
+
+#tagline {
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--golden-turmeric);
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
+/* Dark Mode Styles */
+/* 🌙 Full Dark Mode Theme */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+  color: #ffffff;
+}
+
+/* Paragraphs */
+body.dark-mode p {
+  color: #cccccc;
+}
+
+/* Hero Section */
+body.dark-mode .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)),
+    url('https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')
+      no-repeat center center/cover;
+  color: #f0f0f0;
+}
+
+/* Services Section */
+body.dark-mode .services {
+  background-color: #1e1e1e;
+}
+body.dark-mode .service-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .service-card h3 {
+  color: #ffffff;
+}
+body.dark-mode .service-card p {
+  color: #bbbbbb;
+}
+
+/* About Section */
+body.dark-mode .about {
+  background-color: #1a1a1a;
+}
+
+/* Gallery */
+body.dark-mode .gallery {
+  background-color: #181818;
+}
+body.dark-mode .gallery-caption h3 {
+  color: #ffffff;
+}
+body.dark-mode .gallery-caption p {
+  color: #cccccc;
+}
+
+/* Testimonials */
+body.dark-mode .testimonials {
+  background-color: #2c2c2c;
+}
+body.dark-mode .testimonial-card {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+body.dark-mode .testimonial-text {
+  color: #dddddd;
+}
+
+/* CTA Section */
+body.dark-mode .cta {
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95)),
+    url('https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')
+      no-repeat center center/cover;
+  color: #fff;
+}
+
+/* Footer */
+body.dark-mode footer {
+  background-color: #111;
+  color: #ddd;
+}
+body.dark-mode .footer-links a,
+body.dark-mode .contact-text,
+body.dark-mode .footer-about p {
+  color: #aaa;
+}
+body.dark-mode .footer-links a:hover {
+  color: var(--gold);
+}
+
+
+
+
+/* Icon-Only Dark Mode Button */
+.theme-toggle-icon {
+  background-color: var(--gold);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--dark-charcoal);
+  cursor: pointer;
+  margin-left: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-left:2 rem;
+}
+
+.theme-toggle-icon:hover {
+  background-color: var(--cream);
+  color: var(--gold);
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+        
+        .logo-text {
+            font-family: var(--serif);
+            font-size: 2.6rem; /* Slightly larger */
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px; /* Increased spacing */
+        }
+        
+        .logo:hover .logo-icon {
+            transform: rotateY(20deg) scale(1.15); /* 3D rotation */
+            box-shadow: var(--gold-glow);
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2.5rem 5%; /* Increased padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition-slow);
+            background-color: rgba(248, 246, 240, 0.85); /* Slightly less opaque */
+            backdrop-filter: blur(12px); /* Stronger blur */
+         
+        
+        }
+        
+        header.scrolled {
+            padding: 1.5rem 5%; /* Adjusted padding */
+            background-color: rgba(30, 30, 30, 0.9); /* Darker charcoal */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25); /* Softer shadow */
+        }
+        
+        header.scrolled .logo-text,
+        header.scrolled .nav-link {
+            color: var(--cream);
+        }
+        
+        header.scrolled .logo:hover .logo-icon {
+            background-color: var(--cream);
+            color: var(--dark-charcoal);
+        }
+        
+        /* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 3.5rem; /* Increased gap */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    font-size: 1.7rem; /* Slightly larger */
+    font-weight: 500;
+    text-decoration: none;
+    color: #1f1f1f; /* Modern dark charcoal for readability */
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0; /* Better clickable area */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2.5px;
+    background-color: #d4af37; /* Gold underline */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #d4af37; /* Gold hover color */
+}
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--charcoal);
+            font-size: 2.8rem; /* Larger icon */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px; /* Ensure min height */
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0 5%;
+            background: linear-gradient(rgba(30, 30, 30, 0.65), rgba(30, 30, 30, 0.75)), /* Darker overlay */
+                        url('https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: var(--cream);
+            background-attachment: fixed; /* Parallax effect */
+        }
+        
+        .hero-content {
+            max-width: 65rem; /* Increased max-width */
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            color: var(--cream);
+            margin-bottom: 2.5rem; /* Increased margin */
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4); /* Enhanced shadow */
+            /* animation: fadeInUp 1s ease-out; // Will be handled by JS */
+        }
+        
+        .hero p {
+            font-size: 1.9rem; /* Slightly larger */
+            color: var(--light-gold);
+            margin-bottom: 3.5rem; /* Increased margin */
+            /* animation: fadeInUp 1s ease-out 0.2s forwards; opacity: 0; // JS */
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 2.5rem; /* Increased gap */
+            /* animation: fadeInUp 1s ease-out 0.4s forwards; opacity: 0; // JS */
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            bottom: 0;
+            width: 55rem; /* Slightly larger */
+            max-width: 45%; /* Adjusted max-width */
+            animation: float 8s ease-in-out infinite; /* Slower float */
+            filter: drop-shadow(0 25px 35px rgba(0,0,0,0.5)); /* Enhanced shadow */
+            transition: transform 0.3s ease-out; /* For mouse move effect */
+        }
+        
+        /* About Section */
+        .about {
+            padding: var(--section-padding);
+            background-color: var(--cream);
+            position: relative;
+            overflow: hidden; /* For reveal animations */
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 6rem; /* Increased gap */
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+            height: 55rem; /* Increased height */
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transform-style: preserve-3d;
+            perspective: 1200px; /* Increased perspective */
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .about-image:hover {
+            transform: scale(1.03) rotateY(-5deg) rotateX(2deg); /* 3D tilt on hover */
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.1); /* Zoom image inside */
+        }
+        
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: 2.5rem; /* Adjusted position */
+            left: 2.5rem;
+            right: 2.5rem;
+            bottom: 2.5rem;
+            border: 3px solid var(--gold); /* Thicker border */
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0;
+            transform: scale(1.1); /* Initial state for transition */
+            transition: var(--transition-slow);
+        }
+        
+        .about-image:hover:before {
+            opacity: 1;
+            top: 1.5rem; /* Adjusted position */
+            left: 1.5rem;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            transform: scale(1); /* Animate to normal scale */
+        }
+        
+        .about-content {
+            max-width: 60rem;
+        }
+        
+        .signature {
+            margin-top: 3.5rem; /* Increased margin */
+            width: 22rem; /* Slightly larger */
+            opacity: 0.85; /* Slightly less opaque */
+            transition: transform 0.4s ease;
+        }
+        .signature:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: var(--section-padding);
+            background-color: var(--dark-charcoal);
+            color: var(--cream);
+            position: relative; /* For pseudo-elements */
+        }
+        .services::before { /* Subtle background pattern */
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: radial-gradient(var(--gold) 0.5px, transparent 0.5px);
+            background-size: 15px 15px;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .services .container { position: relative; z-index: 1; }
+
+        .services h2 {
+            color: var(--cream);
+        }
+        
+        .services h2:after {
+            background-color: var(--gold); /* Ensure gold underline */
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr)); /* Slightly larger minmax */
+            gap: 4rem; /* Increased gap */
+        }
+        
+        .service-card {
+            background-color: rgba(248, 246, 240, 0.05); /* Lighter background */
+            padding: 4.5rem 3.5rem; /* Increased padding */
+            border-radius: 1rem;
+            transition: var(--transition-slow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 1px solid rgba(212, 175, 55, 0.2); /* Subtle gold border */
+            transform-style: preserve-3d; /* For 3D hover */
+        }
+        
+        .service-card:before { /* Gradient shine effect */
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(212, 175, 55, 0) 70%);
+            transform: rotate(45deg);
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.8s ease;
+            z-index: 0; /* Behind content */
+        }
+        
+        .service-card:hover {
+            transform: translateY(-1.5rem) perspective(1000px) rotateX(5deg) rotateY(-3deg); /* 3D tilt */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), var(--gold-glow); /* Enhanced shadow */
+        }
+        
+        .service-card:hover:before {
+            opacity: 1;
+            transform: rotate(0deg) scale(1.2);
+        }
+        
+        .service-icon {
+            font-size: 4.5rem; /* Larger icon */
+            color: var(--gold);
+            margin-bottom: 2.5rem; /* Increased margin */
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 1.8rem; /* Increased margin */
+            color: var(--cream);
+        }
+        .service-card p {
+            color: rgba(248, 246, 240, 0.8); /* Lighter text */
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: var(--section-padding);
+            background-color: var(--cream);
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); /* Slightly larger minmax */
+            gap: 2.5rem; /* Increased gap */
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 30rem; /* Increased height */
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition-slow);
+            transform-style: preserve-3d; /* For 3D hover */
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+        
+        .gallery-item:after { /* Darker overlay for better text contrast */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(30, 30, 30, 0.8), transparent 60%); /* Stronger gradient */
+            opacity: 0;
+            transition: var(--transition-slow);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-1rem) perspective(800px) rotateX(3deg) rotateY(2deg); /* 3D tilt */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25); /* Enhanced shadow */
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.15); /* Stronger zoom */
+        }
+        
+        .gallery-item:hover:after {
+            opacity: 1;
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 2.5rem; /* Adjusted position */
+            left: 2.5rem;
+            color: var(--cream);
+            z-index: 2;
+            transform: translateY(3rem); /* Increased initial offset */
+            opacity: 0;
+            transition: var(--transition-medium) 0.1s; /* Added delay */
+        }
+        .gallery-caption h3 { color: var(--cream); font-size: 2.2rem; }
+        .gallery-caption p { color: var(--light-gold); font-size: 1.4rem; margin-bottom: 0; }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: var(--section-padding);
+            background-color: var(--burgundy);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden; /* For quote animation */
+        }
+        .testimonials::before { /* Large animated quote */
+            content: '“';
+            font-family: var(--serif);
+            font-size: 25rem; /* Larger quote */
+            color: rgba(212, 175, 55, 0.1); /* More subtle gold */
+            position: absolute;
+            top: -5rem; /* Adjusted position */
+            left: -2rem;
+            line-height: 1;
+            z-index: 0;
+            transform: rotate(-15deg) scale(0.8);
+            opacity: 0;
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, opacity 1s ease 0.5s;
+        }
+        .testimonials.animated::before {
+            transform: rotate(-10deg) scale(1);
+            opacity: 1;
+        }
+        
+        .testimonials h2 {
+            color: var(--cream);
+            position: relative; z-index: 1;
+        }
+        
+        .testimonials h2:after {
+            background-color: var(--gold);
+        }
+        
+        .testimonials-container {
+            display: flex;
+            gap: 3.5rem; /* Increased gap */
+            overflow-x: auto;
+            padding-bottom: 3.5rem; /* Increased padding */
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+            scrollbar-width: thin; /* For Firefox */
+            scrollbar-color: var(--gold) rgba(248, 246, 240, 0.1); /* For Firefox */
+        }
+        .testimonials-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .testimonials-container::-webkit-scrollbar-track {
+            background: rgba(248, 246, 240, 0.1);
+            border-radius: 4px;
+        }
+        .testimonials-container::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 4px;
+        }
+        
+        .testimonial-card {
+            min-width: 38rem; /* Increased min-width */
+            background-color: rgba(248, 246, 240, 0.08); /* Slightly more opaque */
+            padding: 3.5rem; /* Increased padding */
+            border-radius: 1rem;
+            scroll-snap-align: start;
+            position: relative;
+            border-left: 4px solid var(--gold); /* Accent border */
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-0.5rem) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .testimonial-card:before { /* Small quote icon inside card */
+            content: '"';
+            position: absolute;
+            top: 1.5rem; /* Adjusted position */
+            left: 2.5rem;
+            font-size: 6rem; /* Adjusted size */
+            font-family: var(--serif);
+            color: rgba(212, 175, 55, 0.25); /* More visible */
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 2.5rem; /* Increased margin */
+            position: relative;
+            z-index: 1;
+            font-size: 1.7rem; /* Slightly larger */
+            color: rgba(248, 246, 240, 0.9); /* Brighter text */
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 2rem; /* Increased gap */
+        }
+        
+        .author-avatar {
+            width: 6.5rem; /* Slightly larger */
+            height: 6.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold); /* Thicker border */
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); /* Subtle glow */
+        }
+        
+        .author-info h4 {
+            color: var(--cream);
+            margin-bottom: 0.8rem; /* Increased margin */
+            font-size: 1.8rem; /* Slightly larger */
+        }
+        
+        .author-info p {
+            color: var(--light-gold);
+            font-size: 1.5rem; /* Slightly larger */
+            margin-bottom: 0;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: var(--section-padding);
+            background: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.9)), /* Darker overlay */
+                        url('https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: var(--cream);
+            text-align: center;
+            background-attachment: fixed; /* Parallax effect */
+            position: relative;
+        }
+        .cta::after { /* Gold overlay for richness */
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: var(--gold);
+            opacity: 0.1;
+            mix-blend-mode: overlay; /* Blend with background */
+        }
+        .cta .container { position: relative; z-index: 1; }
+        
+        .cta h2 {
+            color: var(--cream);
+            margin: 0 auto 3.5rem; /* Increased margin */
+            font-size: 4rem; /* Larger for impact */
+        }
+        
+        .cta h2:after {
+            left: 50%;
+            transform: translateX(-50%) scaleX(0); /* Initial state for animation */
+            background-color: var(--cream); /* White underline */
+            transition-delay: 0.5s; /* Delay for title underline */
+        }
+        .cta h2.animated:after {
+             transform: translateX(-50%) scaleX(1);
+        }
+        
+        .cta p {
+            max-width: 75rem; /* Increased max-width */
+            margin: 0 auto 4.5rem; /* Increased margin */
+            font-size: 1.9rem; /* Slightly larger */
+            color: var(--light-gold);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-charcoal);
+            color: var(--cream);
+            padding: 7rem 5% 3.5rem; /* Increased padding */
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)); /* Slightly larger minmax */
+            gap: 5.5rem; /* Increased gap */
+            margin-bottom: 6rem; /* Increased margin */
+        }
+        
+        .footer-logo {
+            margin-bottom: 2.5rem; /* Increased margin */
+        }
+        
+        .footer-logo .logo-text {
+            color: var(--cream);
+        }
+        
+        .footer-about p {
+            color: rgba(248, 246, 240, 0.75); /* Slightly brighter */
+            font-size: 1.5rem; /* Slightly larger */
+        }
+        
+        .footer-links h3,
+        .footer-contact h3 {
+            color: var(--cream);
+            margin-bottom: 2.5rem; /* Increased margin */
+            font-size: 2.2rem; /* Slightly larger */
+            position: relative;
+        }
+        .footer-links h3::after,
+        .footer-contact h3::after { /* Underline for footer headings */
+            content: '';
+            position: absolute;
+            bottom: -0.8rem;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--gold);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1.2rem; /* Increased margin */
+        }
+        
+        .footer-links a {
+            color: rgba(248, 246, 240, 0.75); /* Slightly brighter */
+            text-decoration: none;
+            transition: var(--transition-fast);
+            font-size: 1.5rem; /* Slightly larger */
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 0.8rem; /* Increased padding */
+            letter-spacing: 0.5px; /* Subtle letter spacing on hover */
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.8rem; /* Increased gap */
+            margin-bottom: 1.8rem; /* Increased margin */
+        }
+        
+        .contact-icon {
+            color: var(--gold);
+            font-size: 2rem; /* Larger icon */
+            margin-top: 0.5rem; /* Adjusted alignment */
+        }
+        
+        .contact-text {
+            color: rgba(248, 246, 240, 0.75); /* Slightly brighter */
+            font-size: 1.5rem; /* Slightly larger */
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.8rem; /* Increased gap */
+            margin-top: 2.5rem; /* Increased margin */
+        }
+        
+        .social-link {
+            width: 4.5rem; /* Slightly larger */
+            height: 4.5rem;
+            border-radius: 50%;
+            background-color: rgba(248, 246, 240, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cream);
+            font-size: 2rem; /* Larger icon */
+            transition: var(--transition-medium); /* Smoother transition */
+            border: 1px solid transparent;
+        }
+        
+        .social-link:hover {
+            background-color: var(--gold);
+            color: var(--dark-charcoal);
+            transform: translateY(-0.5rem) scale(1.1); /* Enhanced hover effect */
+            border-color: var(--cream);
+            box-shadow: var(--gold-glow);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3.5rem; /* Increased padding */
+            border-top: 1px solid rgba(248, 246, 240, 0.15); /* Slightly more visible border */
+            color: rgba(248, 246, 240, 0.6); /* Slightly brighter */
+            font-size: 1.5rem; /* Slightly larger */
+        }
+        
+        /* Enhanced Animations & Scroll Effects */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition-delay: var(--animation-delay, 0s); /* Customizable delay */
+        }
+        .reveal-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition-delay: var(--animation-delay, 0s);
+        }
+        .reveal-left.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition-delay: var(--animation-delay, 0s);
+        }
+        .reveal-right.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition-delay: var(--animation-delay, 0s);
+        }
+        .reveal-scale.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Initial states for JS-controlled animations (replaces old @keyframes) */
+        .hero h1, .hero p, .hero-btns {
+            opacity: 0;
+        }
+        
+        @keyframes float { /* Kept existing float, but can be enhanced if needed */
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-2.5rem); /* Slightly more float */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Accessibility: Prefers Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto; /* Disable smooth scroll */
+            }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+                animation-delay: 0ms !important;
+                transition-delay: 0ms !important;
+            }
+            .hero {
+                background-attachment: scroll; /* Disable fixed background/parallax */
+            }
+            .cta {
+                background-attachment: scroll;
+            }
+            .hero-image {
+                animation: none; /* Disable float animation */
+            }
+            .reveal-on-scroll, .reveal-left, .reveal-right, .reveal-scale {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        
+        /* Responsive Design (existing, with minor tweaks if needed for new animations) */
+        @media (max-width: 992px) {
+            :root {
+                --section-padding: 7rem 5%; /* Adjusted padding */
+            }
+            
+            h1 {
+                font-size: 5rem; /* Adjusted size */
+            }
+            
+            h2 {
+                font-size: 3.8rem; /* Adjusted size */
+            }
+            
+            .hero-image {
+                width: 45rem; /* Adjusted size */
+                max-width: 40%;
+            }
+            .services-container {
+                grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+            
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 35rem;
+                height: 100vh;
+                background-color: var(--dark-charcoal);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 3.5rem; /* Increased gap */
+                transition: var(--transition-slow);
+                z-index: 1000;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            }
+            
+            .nav-list.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                color: var(--cream);
+                font-size: 2.2rem; /* Larger for mobile */
+            }
+            .nav-link:hover, .nav-link.active {
+                color: var(--gold);
+            }
+            .nav-link:after { background-color: var(--gold); }
+            
+            .hero {
+                text-align: center;
+                background-attachment: scroll; /* Disable parallax on mobile for performance */
+            }
+            
+            .hero-content {
+                margin: 0 auto;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                display: none; /* Kept as is, can be re-enabled with adjustments */
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 45rem; /* Adjusted height */
+                order: -1;
+            }
+            .cta {
+                background-attachment: scroll; /* Disable parallax on mobile */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 4.2rem; /* Adjusted size */
+            }
+            
+            h2 {
+                font-size: 3.4rem; /* Adjusted size */
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 2rem; /* Adjusted gap */
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 1.8rem 2.5rem; /* Larger padding for touch */
+            }
+            .footer-container {
+                grid-template-columns: 1fr; /* Stack footer columns */
+                gap: 4rem;
+            }
+            .footer-about, .footer-links, .footer-contact {
+                text-align: center;
+            }
+            .footer-links h3::after, .footer-contact h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+
+
+        /* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease;
+}
+
+.spinner {
+  font-family: var(--serif);
+  color: var(--gold);
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  animation: pulseGlow 2s ease-in-out infinite;
+  text-shadow: var(--text-shadow);
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 0.6; transform: scale(1); }
+}
+
+
+
+
+
+/*progressbar*/
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--gold);
+  z-index: 999;
+  transition: width 0.25s ease-out;
+}
+
+
+
+
+
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 2rem;
+  padding: 0.9rem;
+  border-radius: 50%;
+  z-index: 999;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float i {
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.6rem;
+    padding: 0.7rem;
+  }
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+<div id="preloader">
+  <div class="spinner">
+    <span>PREHAAN'S</span>
+    <span>KITCHEN</span>
+  </div>
+</div>
+
+
+
+    <!-- Header -->
+<a href="https://wa.me/YOURNUMBER" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+    <header id="header">
+
+        <a href="#" class="logo">
+            <div class="logo-icon">
+            <img src="/images/pklogo.jpg.png" alt="">
+        </div>
+         <div id="progress-bar"></div>
+
+
+
+
+         <div class="logo-text">Prehaan's Kitchen
+            <span id="tagline"></span>
+         </div>
+              <button id="darkModeToggle" class="theme-toggle-icon" aria-label="Toggle Dark Mode">
+    <i class="fas fa-moon"></i> <!-- default icon -->
+  </button>
+        </a>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav>
+            <ul class="nav-list" id="navList">
+                <li><a href="#home" class="nav-link active">Home</a></li> <!-- Added active class to home -->
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 data-animation="fadeInUp" data-delay="0.1">Culinary Artistry at Its Finest</h1>
+            <p data-animation="fadeInUp" data-delay="0.3">Discover the secrets of gourmet cooking with Prehaan's Kitchen. Elevate your culinary skills with our premium recipes, expert techniques, and immersive cooking experiences.</p>
+            <div class="hero-btns" data-animation="fadeInUp" data-delay="0.5">
+                <a href="#services" class="btn btn-primary"><span>Explore Services</span></a>
+                <a href="#contact" class="btn btn-secondary"><span>Book a Session</span></a>
+            </div>
+        </div>
+        
+        <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Chef preparing gourmet dish" class="hero-image" id="heroImage">
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content reveal-left">
+                <h2 class="reveal-on-scroll" data-delay="0.1">About Prehaan</h2>
+                <p class="reveal-on-scroll" data-delay="0.2">With over 15 years of experience in some of the world's most prestigious kitchens, Prehaan brings a wealth of knowledge and passion to every dish he creates. His journey began in the bustling streets of Mumbai, where he first discovered his love for the culinary arts.</p>
+                <p class="reveal-on-scroll" data-delay="0.3">After training under Michelin-starred chefs across Europe and Asia, Prehaan developed a unique style that blends traditional techniques with innovative flavors. His philosophy centers on using the freshest ingredients to create dishes that tell a story.</p>
+                <p class="reveal-on-scroll" data-delay="0.4">Prehaan's Kitchen was born from a desire to share this expertise with home cooks and aspiring chefs alike. Whether you're looking to master the basics or elevate your skills to professional levels, Prehaan's approachable teaching style makes gourmet cooking accessible to all.</p>
+                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Chef's signature" class="signature reveal-scale" data-delay="0.5">
+            </div>
+            
+            <div class="about-image reveal-right" data-delay="0.2">
+                <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1350&q=80" alt="Chef Prehaan in kitchen">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="reveal-on-scroll text-center" data-animation-type="underline">Our Services</h2> <!-- Added text-center for styling -->
+            
+            <div class="services-container">
+                <div class="service-card reveal-scale" data-delay="0.1">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Private Cooking Classes</h3>
+                    <p>Personalized one-on-one sessions tailored to your skill level and culinary interests. Learn techniques from basic knife skills to advanced plating.</p>
+                </div>
+                
+                <div class="service-card reveal-scale" data-delay="0.2">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Custom Meal Planning</h3>
+                    <p>Weekly or monthly meal plans designed for your dietary needs and preferences, complete with shopping lists and prep guides.</p>
+                </div>
+                
+                <div class="service-card reveal-scale" data-delay="0.3">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>In-Home Chef Services</h3>
+                    <p>Let us handle the cooking for your special occasions. From intimate dinners to large gatherings, we'll create a memorable dining experience.</p>
+                </div>
+                
+                <div class="service-card reveal-scale" data-delay="0.4">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Online Cooking Courses</h3>
+                    <p>Comprehensive video courses covering various cuisines and techniques. Learn at your own pace with detailed instructions.</p>
+                </div>
+                
+                <div class="service-card reveal-scale" data-delay="0.5">
+                    <div class="service-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Recipe Development</h3>
+                    <p>Custom recipes created specifically for your restaurant, food blog, or personal collection, tested and perfected by our team.</p>
+                </div>
+                
+                <div class="service-card reveal-scale" data-delay="0.6">
+                    <div class="service-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Culinary Consultation</h3>
+                    <p>Expert advice for restaurants and food businesses on menu development, kitchen efficiency, and staff training.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="reveal-on-scroll text-center" data-animation-type="underline">Our Creations</h2>
+            
+            <div class="gallery-container">
+                <div class="gallery-item reveal-scale" data-delay="0.1">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Gourmet dish">
+                    <div class="gallery-caption">
+                        <h3>Signature Steak</h3>
+                        <p>Dry-aged ribeye with truffle butter</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal-scale" data-delay="0.2">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Seafood dish">
+                    <div class="gallery-caption">
+                        <h3>Ocean Platter</h3>
+                        <p>Fresh seafood with citrus emulsion</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal-scale" data-delay="0.3">
+                    <img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Vegetarian dish">
+                    <div class="gallery-caption">
+                        <h3>Garden Harvest</h3>
+                        <p>Seasonal vegetables with herb dressing</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal-scale" data-delay="0.4">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2127&q=80" alt="Dessert">
+                    <div class="gallery-caption">
+                        <h3>Chocolate Symphony</h3>
+                        <p>Triple chocolate mousse with berry compote</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item reveal-scale" data-delay="0.5"> <!-- Added one more for symmetry if needed -->
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Breakfast dish">
+                    <div class="gallery-caption">
+                        <h3>Morning Delight</h3>
+                        <p>Artisanal breakfast with local ingredients</p>
+                    </div>
+                </div>
+                 <div class="gallery-item reveal-scale" data-delay="0.6"> <!-- Added one more for symmetry if needed -->
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Plated meal">
+                    <div class="gallery-caption">
+                        <h3>Chef's Special</h3>
+                        <p>Exquisite seasonal creation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials reveal-on-scroll"> <!-- Added reveal to whole section for quote animation -->
+        <div class="container">
+            <h2 class="reveal-on-scroll text-center" data-animation-type="underline">What Our Clients Say</h2>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card reveal-on-scroll" data-delay="0.1">
+                    <p class="testimonial-text">Prehaan transformed my approach to cooking. His private classes gave me the confidence to host dinner parties that impress even my most foodie friends. The techniques I learned have become staples in my kitchen.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Private Cooking Student</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal-on-scroll" data-delay="0.2">
+                    <p class="testimonial-text">The custom meal plans have been a game-changer for our busy family. We're eating healthier, wasting less food, and actually enjoying meal prep. Prehaan understood our tastes and dietary needs perfectly.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Meal Plan Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal-on-scroll" data-delay="0.3">
+                    <p class="testimonial-text">We hired Prehaan's team for our anniversary dinner, and it was worth every penny. The food was exquisite, and they handled everything seamlessly. Our guests are still talking about that meal months later.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily and David Rodriguez" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Emily & David Rodriguez</h4>
+                            <p>Private Dining Clients</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card reveal-on-scroll" data-delay="0.4">
+                    <p class="testimonial-text">As a food blogger, I've taken many cooking classes, but Prehaan's online courses stand out. The production quality is superb, and his teaching style makes complex techniques accessible. My content has improved dramatically since taking his courses.</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Jessica Park" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Jessica Park</h4>
+                            <p>Food Blogger</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="reveal-on-scroll" data-animation-type="underline" data-delay="0.1">Ready to Elevate Your Culinary Skills?</h2>
+            <p class="reveal-on-scroll" data-delay="0.3">Join hundreds of satisfied clients who have transformed their cooking with Prehaan's expert guidance. Whether you're a beginner or an experienced cook, we have the perfect program to help you reach your culinary goals.</p>
+            <a href="#contact" class="btn btn-primary reveal-scale" data-delay="0.5"><span>Get Started Today</span></a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-about reveal-on-scroll" data-delay="0.1">
+                <a href="#" class="logo footer-logo">
+                    <div class="logo-icon">
+                        <img src="/images/pklogo.jpg.png" alt="footerlogo">
+                        </div>
+                    <div class="logo-text">Prehaan's Kitchen</div>
+                </a>
+                <p>Bringing gourmet cooking within reach through expert instruction, premium recipes, and personalized culinary services.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links reveal-on-scroll" data-delay="0.2">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links reveal-on-scroll" data-delay="0.3">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Private Classes</a></li>
+                    <li><a href="#">Meal Planning</a></li>
+                    <li><a href="#">Chef Services</a></li>
+                    <li><a href="#">Online Courses</a></li>
+                    <li><a href="#">Consultation</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact reveal-on-scroll" data-delay="0.4">
+                <h3>Contact Us</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p class="contact-text">123 Culinary Avenue, Foodie District, CA 90210</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <p class="contact-text">+1 (555) 123-4567</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p class="contact-text">hello@prehaanskitchen.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Prehaan's Kitchen. All Rights Reserved. | Designed with Passion</p>
+        </div>
+    </footer>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navList = document.getElementById('navList');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isActive = navList.classList.toggle('active');
+            mobileMenuBtn.innerHTML = isActive ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            mobileMenuBtn.setAttribute('aria-expanded', isActive);
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) { // Adjusted threshold
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Active Nav Link Highlighting & Smooth Scroll
+        const sections = document.querySelectorAll('section[id]');
+        const updateActiveLink = () => {
+            let currentSectionId = 'home';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - header.offsetHeight - 50) { // Adjusted offset
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', updateActiveLink);
+        updateActiveLink(); // Initial call
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') { // Link to top of page
+                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                     return;
+                }
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    let offset = header.classList.contains('scrolled') ? header.offsetHeight : header.offsetHeight + 20; // Dynamic offset
+                    window.scrollTo({
+                        top: targetElement.offsetTop - offset,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for scroll animations
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const heroElements = document.querySelectorAll('.hero [data-animation]');
+        heroElements.forEach(el => {
+            if (prefersReducedMotion) {
+                el.style.opacity = '1';
+                return;
+            }
+            const delay = parseFloat(el.dataset.delay || 0) * 1000;
+            setTimeout(() => {
+                el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                el.style.opacity = '1';
+                if (el.dataset.animation === "fadeInUp") {
+                    el.style.transform = 'translateY(20px)'; // Initial position
+                    requestAnimationFrame(() => { // Ensure initial styles are applied
+                        el.style.transform = 'translateY(0)';
+                    });
+                }
+            }, delay);
+        });
+
+        const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-left, .reveal-right, .reveal-scale');
+        const observerCallback = (entries, observerInstance) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const delay = parseFloat(el.dataset.delay || 0) * 1000;
+                    
+                    setTimeout(() => {
+                        el.classList.add('animated');
+                        if (el.dataset.animationType === "underline" || el.matches('h2')) { // Animate h2 underline
+                           el.classList.add('animated'); // This will trigger h2:after animation
+                        }
+                        if (el.matches('.testimonials')) { // For testimonials large quote
+                            el.classList.add('animated');
+                        }
+
+                    }, delay);
+                    observerInstance.unobserve(el); // Animate only once
+                }
+            });
+        };
+
+        if (!prefersReducedMotion) {
+            const observer = new IntersectionObserver(observerCallback, { threshold: 0.15 }); // Adjusted threshold
+            revealElements.forEach(element => {
+                // Set initial styles for JS-controlled reveals if not handled by CSS
+                if (element.classList.contains('reveal-on-scroll') || 
+                    element.classList.contains('reveal-left') ||
+                    element.classList.contains('reveal-right') ||
+                    element.classList.contains('reveal-scale')) {
+                    // CSS already handles initial opacity and transform
+                }
+                observer.observe(element);
+            });
+        } else { // If reduced motion, make all reveal elements visible immediately
+            revealElements.forEach(el => {
+                el.classList.add('animated'); // This will apply final state (opacity 1, transform none)
+                 if (el.dataset.animationType === "underline" || el.matches('h2')) {
+                    el.classList.add('animated');
+                }
+                 if (el.matches('.testimonials')) {
+                    el.classList.add('animated');
+                }
+            });
+        }
+        
+        // Hero Image Mouse Move Effect (Subtle 3D Tilt)
+        const heroImage = document.getElementById('heroImage');
+        if (heroImage && !prefersReducedMotion) {
+            const hero = document.querySelector('.hero');
+            hero.addEventListener('mousemove', (e) => {
+                const rect = hero.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = ((y - centerY) / centerY) * -3; // Max 3deg rotation
+                const rotateY = ((x - centerX) / centerX) * 3;  // Max 3deg rotation
+
+                heroImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2rem)`; // Keep float base
+            });
+            hero.addEventListener('mouseleave', () => {
+                 heroImage.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(-2rem)`; // Reset but keep float base
+            });
+        }
+
+        // Update Copyright Year
+        const currentYearSpan = document.getElementById('currentYear');
+        if(currentYearSpan) {
+            currentYearSpan.textContent = new Date().getFullYear();
+        }
+
+        // Preload important images (optional, as browser does this well)
+        // window.addEventListener('load', () => {
+        //     const imagesToPreload = [
+        //         'https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+        //         'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1350&q=80'
+        //     ];
+            
+        //     imagesToPreload.forEach(src => {
+        //         const img = new Image();
+        //         img.src = src;
+        //     });
+        // });
+
+        // Remove .animated class if elements are not intersecting (for re-animation on scroll up)
+        // This is optional and can sometimes be distracting. Enable if desired.
+        /*
+        if (!prefersReducedMotion) {
+            const reObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        entry.target.classList.remove('animated');
+                        if (entry.target.dataset.animationType === "underline" || entry.target.matches('h2')) {
+                           entry.target.classList.remove('animated');
+                        }
+                        if (entry.target.matches('.testimonials')) {
+                            entry.target.classList.remove('animated');
+                        }
+                    } else {
+                        // Re-add if it becomes visible again (handled by the main observer logic if unobserve is removed)
+                        // Or add a specific re-trigger here if unobserve is kept
+                        const el = entry.target;
+                        const delay = parseFloat(el.dataset.delay || 0) * 1000;
+                        setTimeout(() => {
+                            el.classList.add('animated');
+                             if (el.dataset.animationType === "underline" || el.matches('h2')) {
+                               el.classList.add('animated');
+                            }
+                            if (el.matches('.testimonials')) {
+                                el.classList.add('animated');
+                            }
+                        }, delay);
+                    }
+                });
+            }, { threshold: 0 }); // Trigger as soon as it's out of view
+
+            revealElements.forEach(element => {
+                reObserver.observe(element);
+            });
+        }
+        */
+    });
+
+const toggleBtn = document.getElementById('darkModeToggle');
+const icon = toggleBtn.querySelector('i');
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+  // Toggle icon between moon (🌙) and sun (☀️)
+  if (document.body.classList.contains('dark-mode')) {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  } else {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
+  }
+});
+
+
+
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+
+  // Keep it visible for at least 3 seconds (3000 ms)
+  setTimeout(() => {
+    preloader.style.opacity = "0";
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 600); // Fade out duration
+  }, 3000);
+});
+
+
+
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = (scrollTop / docHeight) * 100;
+  document.getElementById("progress-bar").style.width = `${scrolled}%`;
+});
+
+
+
+const taglineText = "Finest Culinary Excellence.";
+let i = 0;
+const speed = 75;
+
+function typeWriter() {
+  if (i < taglineText.length) {
+    document.getElementById("tagline").innerHTML += taglineText.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+window.onload = () => {
+  setTimeout(typeWriter, 3000); // Start typing after preloader
+};
+
+
+ </script>
+</body>
+</html>
+
